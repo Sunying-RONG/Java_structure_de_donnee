@@ -1,0 +1,36 @@
+------------------------------------------------------
+Questions sur la séance 1 : Interfaces et rectangles
+------------------------------------------------------
+
+Exercices préparatoires
+
+Question 1.
+a- Compléter la classe Point2d : attributs, constructeurs, méthodes.
+b- Compléter la classe MainRectangles par la création de 3 points.
+
+Question 2.
+a- Compléter la classe Rectangle1pt2lg : attributs, constructeurs, méthodes.
+b- Compléter la classe MainRectangles pour que les rectangles r1 et r2 soient initialisés.
+c- Vérifiez que la création du dessin de rectangles dessin1 et le calcul de l'aire se sont bien passés
+(en exécutant MainRectangles).
+
+Question 3.
+a- Compléter la classe Rectangle2pts : attributs, constructeurs, méthodes.
+b- Compléter la classe MainRectangles pour créer deux rectangles, nommés r3 et r4, de cette classe.
+
+Question 4.
+a- Pouvez-vous insérer r3 et r4 dans le dessin de rectangles dessin1 et pourquoi ? No
+b- Quelle solution pouvez-vous imaginer ? Utiliser interface 
+
+5. Ajouter une interface Carre comme sous-interface de Rectangle (on utilise extends comme entre des classes)
+   Elle introduit la méthode "int cote()"
+6. Ajouter une classe Carre1pt1Lg qui implémente l'interface Carre avec 1 point et 1 côté
+7. Dans le Main, créer 2 carrés et appeler la méthode de saisie sur 1 de ces carrés
+8. Complétez le dessin de rectangles par ces deux carrés et afficher son aire moyenne
+ce sera possible car : Carre extends Rectangle et Rectangle peut être mis dans un dessin
+9. Vous pouvez compléter/modifier l'interface et les classes rectangles afin de pouvoir sur tous ces types
+   connaître le point en haut à gauche, le point en bas à droite et la longueur de chaque côté
+10. On peut aussi ajouter une classe intermédiaire abstraite RectangleABS :
+- factoriser ce qui est commun à Rectangle1pt2lg et Rectangle2pts
+- implements Rectangle
+- Rectangle1pt2lg et Rectangle2pts sont des sous-classes de RectangleABS
