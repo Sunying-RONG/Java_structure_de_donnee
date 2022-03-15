@@ -65,5 +65,29 @@ public class mainDirectionLycee {
 		System.out.println(directionLyceeSimoneVeil
 				.anneeRecrutementPlusAnciennePourCorpsIte("personnel de direction"));
 		
-		}
+		System.out.println("age moyen : "+directionLyceeSimoneVeil.ageMoyenStream());
+		System.out.println("age moyen : "+directionLyceeSimoneVeil.ageMoyenStreamMembres());
+		
+		System.out.println("\nafficher noms : ");
+		directionLyceeSimoneVeil.afficheNomsStream();
+		System.out.println("\nafficher noms : ");
+		directionLyceeSimoneVeil.afficheNomsStreamMembres();
+		
+		System.out.println("age moyen cat. A recrutes avant 2000 : ");
+		System.out.println(directionLyceeSimoneVeil
+				.ageMoyenCategorieAvantStream(Categorie.A,2000));
+		
+		System.out.println("age moyen cat. A recrutes avant 2000 : ");
+		System.out.println(directionLyceeSimoneVeil
+				.ageMoyenCategorieAvantStreamMembres(Categorie.A,2000));
+		
+		System.out.println("annee recrutement plus ancienne pers. de direction : ");
+		System.out.println(directionLyceeSimoneVeil
+				.anneeRecrutementPlusAnciennePourCorpsStream("personnel de direction"));
+		
+		System.out.println("annee recrutement plus ancienne pers. de direction : ");
+		System.out.println(directionLyceeSimoneVeil
+				.anneeRecrutementPlusAnciennePourCorpsStreamMembres("personnel de direction"));
+		
+	}
 }
