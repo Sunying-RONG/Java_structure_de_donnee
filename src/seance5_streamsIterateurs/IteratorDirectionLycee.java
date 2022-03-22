@@ -1,4 +1,4 @@
-package streamsIterateurs;
+package seance5_streamsIterateurs;
 
 import java.util.Iterator;
 

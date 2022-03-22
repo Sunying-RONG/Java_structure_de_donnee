@@ -1,4 +1,4 @@
-package streamsIterateurs;
+package seance5_streamsIterateurs;
 
 public class mainDirectionLycee {
 	public static void main(String[] args) {
