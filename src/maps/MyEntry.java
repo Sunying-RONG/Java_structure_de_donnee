@@ -1,7 +1,7 @@
 package maps;
 
 public class MyEntry<K,V> {
-	K key;
+	K key; // visibilité niveau package
 	V value;
 	
 	public MyEntry(K key, V value) {
