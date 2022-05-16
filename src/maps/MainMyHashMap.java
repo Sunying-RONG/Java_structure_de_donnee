@@ -91,7 +91,6 @@ public class MainMyHashMap {
 		System.out.println(mhm.get("51"));	
 		
 		// TESTER ICI 
-		
 		// la méthode size() et la méthode isEmpty()
 		System.out.println(mhm.size());
 		System.out.println(mhm.isEmpty());

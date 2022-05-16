@@ -1,24 +1,15 @@
 package etudiantMaps;
-
 import java.time.LocalDate;
 import java.time.Period;
 
 public class Etudiant {
-	
 	private final String numEtu;
-	
 	private final String nom; 
-	
 	private final int anneeNaiss;
-	
 	private CodePays codePays;
-	
 	private double note1, note2, note3;
-
-	
 	public Etudiant() 
 		{this.numEtu = "inconnu"; this.nom = "inconnu"; this.anneeNaiss=0;}
-	
 	public Etudiant(String numEtu, String nom, int anneeNaiss, CodePays codePays,
 			        double note1, double note2, double note3) {
 		this.numEtu = numEtu;
@@ -29,30 +20,22 @@ public class Etudiant {
 		this.setNote2(note2);
 		this.setNote3(note3);
 	}
-	
 	public String getNumEtu() {
 		return this.numEtu;
 	}
-	
 	public String getNom() {
 		return this.nom;
 	}
-		
 	public int getAge() {
 		LocalDate today =  LocalDate.now();
 		return today.getYear() - this.anneeNaiss;
 	}
-	
 	public int getAnneeNaiss() {
 		return this.anneeNaiss;
 	}
-	
-
-	
 	public double getNote1() {
 		return this.note1;
 	}
-	
 	public void setNote1(double nouvelleNote) {
 		// on suppose des notes entre 0 et 20
 		if (nouvelleNote >=0 && nouvelleNote <=20)
@@ -60,11 +43,9 @@ public class Etudiant {
 		else
 			System.out.println("pb note hors de l'intervalle [0,20]");
 	}
-	
 	public double getNote2() {
 		return this.note2;
 	}
-	
 	public void setNote2(double nouvelleNote) {
 		// on suppose des notes entre 0 et 20
 		if (nouvelleNote >=0 && nouvelleNote <=20)
@@ -72,11 +53,9 @@ public class Etudiant {
 		else
 			System.out.println("pb note hors de l'intervalle [0,20]");
 	}
-	
 	public double getNote3() {
 		return this.note3;
 	}
-	
 	public void setNote3(double nouvelleNote) {
 		// on suppose des notes entre 0 et 20
 		if (nouvelleNote >=0 && nouvelleNote <=20)
@@ -84,27 +63,19 @@ public class Etudiant {
 		else
 			System.out.println("pb note hors de l'intervalle [0,20]");
 	}
-	
-
-	
 	public CodePays getCodePays() {
 		return this.codePays;
 	}
-	
 	public void setCodePays(CodePays nouveauCode) {
 		// rien à vérifier car l'énumération limite
 		// naturellement les valeurs à un 
 		// ensemble de valeurs cohérentes
 		this.codePays=nouveauCode;
 	}
-	
-	
 	public double moyenne() {
 		return (this.note1+this.note2+this.note3)/3;
 	}
-	
 	/*
-	 * 
 	Rattrapage : moyenne entre 0 et <10
 	Passable : de 10 à <12
 	Assez bien : de 12 à <14
@@ -134,7 +105,6 @@ public class Etudiant {
 							mention = Mention.excellent;
 		return mention;
 	}
-	
 	public String ligneResultats() {
 		/*
 		 * retourne nom, moyenne, mention 
@@ -158,7 +128,6 @@ public class Etudiant {
 		}		
 		return res;
 	}
-	
 	public String toString() {
 		return "Etudiant "+this.getNumEtu()+
 				"\n nom"+this.getNom()+

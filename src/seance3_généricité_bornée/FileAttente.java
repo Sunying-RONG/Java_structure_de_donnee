@@ -59,7 +59,8 @@ public class FileAttente<E extends InvitationI> {
 	
 	// public static<X,Y> boolean compare(FileAttente<X> f1, FileAttente<Y> f2) si différentes types, ajouter static
 	// dans méthode static ne peut pas utiliser <P> qui est le formel de cette classe. 
-	public static<X extends InvitationI> boolean compareStaticMemeType(FileAttente<X> f1, FileAttente<X> f2) {
+	public static boolean compareStaticMemeType(
+			FileAttente<? extends InvitationI> f1, FileAttente<? extends InvitationI> f2) {
 		return f1.contenu.equals(f2.contenu);
 	}
 	

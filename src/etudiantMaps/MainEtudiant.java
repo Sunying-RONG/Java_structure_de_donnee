@@ -1,7 +1,5 @@
 package etudiantMaps;
-
 public class MainEtudiant {
-
 	public static void main(String[] args) {
 		/*Etudiant(String num, String nom, int anneeNaiss, CodePays codePays,
 			        double note1, double note2, double note3)*/
@@ -34,7 +32,6 @@ public class MainEtudiant {
 		System.out.println(e5);	
 		
 		// ici il faudra remplacer Promotion par PromotionMap
-		
 		Promotion p = new Promotion("groupe B FDS",2021);
 		
 		System.out.println("\n---PROMO VIDE----\n"+p.moyenneGénérale());
@@ -53,21 +50,12 @@ public class MainEtudiant {
 		p.inscrire(e6);
 		p.inscrire(e7);
 
-		
 		System.out.println("\n-------\n"+p.moyenneGénérale());	
 		System.out.println("\n-------\n"+p.recherche("Astrid"));
 		System.out.println("\n-------\n"+p.recherche("astrid"));
 		System.out.println("\n---Admis----\n"+p.admis());	
-		System.out.println("\n---Etu Et. non francophone ----\n"
-							+p.etuEtrangerNonFranco());		
-		System.out.println("\n---Majors ----\n"
-				+p.majors());	
-		
-		System.out.println("\n---Majors v1 ----\n"
-				+p.majorsv1());		
-				
+		System.out.println("\n---Etu Et. non francophone ----\n"+p.etuEtrangerNonFranco());		
+		System.out.println("\n---Majors ----\n"+p.majors());	
+		System.out.println("\n---Majors v1 ----\n"+p.majorsv1());		
 	}
-	
-
-
 }

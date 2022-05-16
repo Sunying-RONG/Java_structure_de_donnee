@@ -22,6 +22,4 @@ public class Produit implements ObjetAvecEtiquetteI {
 	public String etiquette() {
 		return etiquette;
 	}
-	
-
 }

@@ -1,9 +1,6 @@
 package seance2_généricité;
-
 import java.util.Date;
-
 public class Main {
-
 	public static void main(String[] args) {
 		Personne p1 = new Personne("Paul");
 		Personne p2 = new Personne("Anna");
@@ -17,19 +14,15 @@ public class Main {
 		filePersonne.sort();
 		System.out.println("nb de personnes dans file d'attente : "+filePersonne.nbElements());
 
-		
 		FileAttente<Tache> fileTache = new FileAttente<>();
 		fileTache.entre(t1);
 		System.out.println("nb de tâches dans file d'attente : "+fileTache.nbElements());
-		
 		System.out.println("nb d'entrés dans toutes files d'attente : "+FileAttente.nbEntre());
 
 		FileAttente<Personne> filePersonne2 = new FileAttente<>();
 		filePersonne2.entre(p2);
 		System.out.println("filePersonne et filePersonne2 ont même personne, appeler sur class ? "+FileAttente.compareStaticMemeType(filePersonne, filePersonne2));
-		
 		System.out.println("filePersonne et filePersonne2 ont même personne, appeler sur objet ? "+filePersonne.compareMemeType(filePersonne2));
-		
 		System.out.println("filePersonne et fileTache ont même nombre d'objets, appeler sur objet ? "+filePersonne.compareNonMemeType(fileTache));
 		
 		PaireHomogène2<Personne> ph = new PaireHomogène2<>(p1, p2);
@@ -43,7 +36,5 @@ public class Main {
 		EtiquetteBouteille etiquette2 = new EtiquetteBouteille(12, "nomProducteur", "adresse", "descriptif", 120);
 		
 		BouteilleEtiquetee<EtiquetteBouteille> bee = new BouteilleEtiquetee<>("bouteille2", etiquette2);
-
 	}
-
 }

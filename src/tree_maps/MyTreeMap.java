@@ -1,14 +1,11 @@
 package tree_maps;
-
 import java.util.*;
-
 // K extends Comparable<K> permettra de disposer d'une
 // fonction naturelle de comparaison sur les clefs
 // de la forme : int compareTo(K autreClef)
 // elle retourne 0 si égal
 // -1 si this inférieur à autreClef
 // +1 si this supérieur à autreClef
-
 public class MyTreeMap<K extends Comparable<K>, V> 
 		implements Map<K, V> {
 	
@@ -155,7 +152,6 @@ public class MyTreeMap<K extends Comparable<K>, V>
 		return this.root.nbFeuilles();
 	}
 
-		
 	// méthodes que vous pouvez ne pas écrire
 
 	@Override
@@ -167,7 +163,6 @@ public class MyTreeMap<K extends Comparable<K>, V>
 	public Set<Entry<K, V>> entrySet() {
 		return null;
 	}
-
 
 	@Override
 	public V remove(Object key) {
@@ -181,7 +176,4 @@ public class MyTreeMap<K extends Comparable<K>, V>
 	@Override
 	public void clear() {
 	}
-
-	
-
 }

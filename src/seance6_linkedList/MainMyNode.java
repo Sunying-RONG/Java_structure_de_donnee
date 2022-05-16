@@ -1,39 +1,25 @@
 package seance6_linkedList;
-
 public class MainMyNode {
 	public static void main(String[] arg) {
-		
 		// On cree 3 MyNode isoles contenant les lettres "e", "n", "z"
-		
 		MyNode<String> e = new MyNode<String>(null, "e", null);
 		MyNode<String> n = new MyNode<String>(null, "n", null);
 		MyNode<String> z = new MyNode<String>(null, "z", null);
-		
 		// On attache les noeuds entre eux pour qu'ils soient dans l'ordre
 		// "n" "e" "z"	
 		// celui qui porte "n" est le premier et a pour suivant celui qui porte "e"
-		
 		n.next=e;
-		
 		// celui qui porte "e" a pour suivant celui qui porte "z"
 		// et pour précédent celui qui porte "n"
-		
 		e.next=z;
 		e.prev=n;
-		
 		// celui qui porte "z" pour précédent celui qui porte "e"
-
 		z.prev=e;
-		
 		// Pour vérifier que la chaine est bien construite du début vers la fin, 
 		// on parcourt en partant du noeud contenant "n"
-		
 		parcours(n);
-		
 		// et on le fait en sens inverse
 		parcoursInverse(z);
-		
-		
 		// Exercice 0 : ajouter "o" entre "e" et "z" et vérifier que les liens
 		// sont bien reconstitués en parcourant dans un sens puis dans l'autre
 		MyNode<String> o = new MyNode<String>(null, "o", null);
@@ -43,7 +29,6 @@ public class MainMyNode {
 		o.prev = e;
 		parcours(n);
 		parcoursInverse(z);
-		
 		// Exercice 1 : Creer 4 MyNode isoles contenant les lettres "a", "o", "d", "s"
 		MyNode<String> a1 = new MyNode<String>(null, "a", null);
 		MyNode<String> o1 = new MyNode<String>(null, "o", null);

@@ -1,5 +1,4 @@
 package seance5_streamsIterateurs;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -78,7 +77,6 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 	}
 		
 	// Methode qui affiche les noms des employés sur la sortie standard 
-	
 	public void afficheNoms() {
 		System.out.println(this.getProviseur().getNom()+", "+
 		this.getProviseurAdjoint().getNom()+", "+
@@ -89,7 +87,6 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 	
 	// Methode qui retourne la liste des employes recrutes 
 	// apres une certaine annee passee en parametre
-	
 	public ArrayList<EmployeLycee> recruteApres(int annee) {
 		ArrayList<EmployeLycee> listRecruteApres = new ArrayList<>();
 		if (this.getProviseur().getAnneeRecrutement() > annee) {
@@ -113,7 +110,6 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 	// Methode qui retourne l'age moyen 
 	// des membres d'une certaine categorie recrutes
 	// avant une certaine annee	
-	
 	public double ageMoyenCategorieAvant(Categorie a, int annee)
 	{
 		int ageTotal = 0;
@@ -149,7 +145,6 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 	// Methode qui retourne l'annee de recrutement
 	// la plus ancienne pour les employes 
 	// d'un certain corps
-
 	public int anneeRecrutementPlusAnciennePourCorps(String corps)
 	{		
 		ArrayList<Integer> listAnneeRecrutement = new ArrayList<>();
@@ -176,12 +171,9 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 	public Iterator<EmployeLycee> iterator() {
 		return new IteratorDirectionLycee(this);
 	}
-	
 	//********* ITERATEUR ******************
-
 	// Après avoir écrit l'itérateur et avoir transformé la
 	// classe DirectionLycee en classe Iterable ...
-	
 	public int ageMoyenIte() {
 		int ageTotal = 0;
 		int nb = 0;
@@ -200,7 +192,7 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 			
 	// Ecrire afficheNoms avec for (quand l'iterateur existe)
 	public void afficheNomsIte() {
-//	boucle for, java transcrire vers Iterator<EmployeLycee> ite = this.iterator(); while ... quand complication
+//	boucle for, java transcrire vers Iterator<EmployeLycee> ite = this.iterator(); while ... quand compilsation
 		for (EmployeLycee e : this) {
 			System.out.println(e.getNom());
 		}
@@ -256,7 +248,7 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 //		return membreVide;
 //	}
 	
-	// égale .stream()
+	// égale .stream() sur list
 	public Stream<EmployeLycee> streamMembres() {
 		Iterator<EmployeLycee> ite = new IteratorDirectionLycee(this);
 		return iteratorVersStreamSequentiel(ite);
@@ -353,5 +345,4 @@ public class DirectionLycee implements Iterable<EmployeLycee> {
 				.min()
 				.getAsInt();
 	}
-		
 }

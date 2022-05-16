@@ -1,14 +1,11 @@
 package maps;
-
 //https://repl.it/join/lyylkptp-mariannehuchard
-
 import java.util.*;
 
 public class MyHashMap<K,V>
 		implements Map<K,V>
 {
 	// pour stocker les associations
-	
 	private MyEntry<K,V>[] table;
 	private int size; 
 	
@@ -17,7 +14,6 @@ public class MyHashMap<K,V>
 		// estimative de 10
 		// et on ne sait pas combien d'associations
 		// on devra stocker au fil du temps
-		
 		this.table = new MyEntry[10];
 	}
 
@@ -32,7 +28,6 @@ public class MyHashMap<K,V>
 			this.put(e.key, e.value);
 		}
 	}
-	
 	@Override
 	public V put(K key, V value) {
 		// si la table est pleine, on appelle la fonction agrandir
@@ -56,11 +51,9 @@ public class MyHashMap<K,V>
 		size++;
 		return value;
 	}
-	
 	// methodes A ECRIRE
 	// méthode affichant tout le tableau, mêmes les entrées
 	// vide (égales à null)
-
 	public String toString() {
 		String s = "";
 		for (MyEntry<K,V> myEntry : this.table) {
@@ -68,7 +61,6 @@ public class MyHashMap<K,V>
 		}
 		return s;
 	}
-	
 	// methode retournant l'ensemble de clefs
 	@Override
 	public Set<K> keySet() {
@@ -81,7 +73,6 @@ public class MyHashMap<K,V>
 		}
 		return res;
 	}
-	
 	@Override
 	public boolean containsKey(Object key) {
 		// retourne vrai si keySet() contient key
@@ -90,14 +81,12 @@ public class MyHashMap<K,V>
 		}
 		return false;
 	}
-	
 	@Override
 	public int size() {
 		// A ECRIRE
 		// tout utilisé, pas vide
 		return this.size;
 	}
-	
 	@Override
 	public boolean isEmpty() {
 		// A ECRIRE
@@ -106,7 +95,6 @@ public class MyHashMap<K,V>
 		}
 		return true;
 	}
-
 	@Override
 	public V get(Object key) {
 		// A ECRIRE
@@ -125,45 +113,30 @@ public class MyHashMap<K,V>
 		}
 		return table[hashCourant].value;
 	}
-	
 	// Methodes a ne pas ecrire
 	// presentes seulement pour respecter l'interface
 	// seraient écrites dans une version complete
-
 	@Override
 	public boolean containsValue(Object value) {
-		// TODO Auto-generated method stub
 		return false;
 	}
-
 	@Override
 	public V remove(Object key) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
 	public void putAll(Map<? extends K, ? extends V> m) {
-		// TODO Auto-generated method stub
-		
 	}
-
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public Collection<V> values() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
 	public Set<Entry<K, V>> entrySet() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }

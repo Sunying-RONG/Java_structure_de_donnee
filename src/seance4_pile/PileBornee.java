@@ -1,25 +1,19 @@
 package seance4_pile;
-
 import java.util.ArrayList;
-
 public class PileBornee<T> extends Pile<T> implements IPileBornee<T> {
 	private int tailleMax;
-	
 	public PileBornee(int tailleMax) {
 		super();
 		this.tailleMax = tailleMax;
 	}
-
 	public PileBornee() {
 		super();
 		this.tailleMax = 10;
 	}
-
 	@Override
 	public int getTailleMax() {
 		return tailleMax;
 	}
-	
 	@Override
 	public void setTailleMax(int tailleMax) throws TailleNegativeException, TailleMaxTropPetiteException {
 		if (tailleMax > 0) {
@@ -32,7 +26,6 @@ public class PileBornee<T> extends Pile<T> implements IPileBornee<T> {
 			throw new TailleNegativeException("Taille ne doit pas être négative");
 		}
 	}
-	
 	@Override
 	public void empiler(T t) throws PilePleineException {
 		if (this.taille() < this.tailleMax) {
@@ -41,6 +34,4 @@ public class PileBornee<T> extends Pile<T> implements IPileBornee<T> {
 			throw new PilePleineException("Pile est pleine");
 		}
 	}
-	
-
 }

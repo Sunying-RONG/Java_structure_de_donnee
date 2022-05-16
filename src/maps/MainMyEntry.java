@@ -1,9 +1,7 @@
 package maps;
 
 public class MainMyEntry {
-
 	public static void main(String[] args) {
-
 		// Suivant les associations que l'on crée
 		// la clef et la valeur sont de différents types
 		
@@ -32,7 +30,5 @@ public class MainMyEntry {
 		// clef : pointure de chaussure (Ex. 42)
 		// valeur : longueur de pied (Ex. 27 cm)
 		MyEntry<Float,Float> chaussure = new MyEntry<>((float) 42,(float) 33);
-		
 	}
-
 }

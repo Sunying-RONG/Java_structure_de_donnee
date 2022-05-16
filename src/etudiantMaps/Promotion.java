@@ -1,53 +1,37 @@
 package etudiantMaps;
-
 import java.util.*;
-
-
 public class Promotion {
-
 	private HashMap<String, Etudiant> etudiants;
 //	private ArrayList <Etudiant> etudiants; 
-	
 	private String nom = "nom à renseigner";
-	
 	private int annee = 2020;
-
-	
 	public Promotion() {
 //		this.etudiants = new ArrayList<>();
 		this.etudiants = new HashMap<>();
 	}
-	
 	public Promotion(int annee){
 	    this.setAnnee(annee);
 //	    this.etudiants = new ArrayList<Etudiant>();
 		this.etudiants = new HashMap<>();
 	 }
-	
 	public Promotion(String nom, int annee){
 		this.setNom(nom);
 	    this.setAnnee(annee);
 //	    this.etudiants = new ArrayList<Etudiant>();
 		this.etudiants = new HashMap<>();
 	 }
-
-	
 	public String getNom() {
 		return nom;
 	}
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
 	public int getAnnee() {
 		return annee;
 	}
-
 	public void setAnnee(int annee) {
 		this.annee = annee;
 	}
-	
 	// Dans une version avec Map : le paramètre ne sera plus un entier
 	// mais le numéro de l'étudiant
 	
@@ -62,13 +46,10 @@ public class Promotion {
 	public Etudiant getEtudiant(String numEtu) {
 		return this.etudiants.get(numEtu);
 	}
-	
 	public int nbEtudiants() {
 		return this.etudiants.size();
 	}
-	
 	public void inscrire(Etudiant e) {
-				
 //		if (this.etudiants.contains(e))
 //		{
 //			System.out.println("déjà présent");
@@ -81,7 +62,6 @@ public class Promotion {
 			this.etudiants.put(e.getNumEtu(), e);
 		}
 	}
-	
 //	public double moyenneGénérale(){
 //	    if (this.etudiants.isEmpty()){ 
 //	      return 0;
@@ -92,7 +72,6 @@ public class Promotion {
 //	    }
 //	    return somme/this.nbEtudiants();
 //	}
-	
 	public double moyenneGénérale(){
 	    if (this.etudiants.isEmpty()){ 
 	      return 0;
@@ -103,8 +82,6 @@ public class Promotion {
 	    }
 	    return somme/this.nbEtudiants();
 	}
-	
-
 //	  public void afficheResultats()
 //	   {
 //	     for(Etudiant e: this.etudiants)
@@ -112,7 +89,6 @@ public class Promotion {
 //	       System.out.println(e.ligneResultats());
 //	     }
 //	   }
-	
 	 public void afficheResultats()
 	   {
 	     for(Etudiant e: this.etudiants.values())
@@ -120,7 +96,6 @@ public class Promotion {
 	       System.out.println(e.ligneResultats());
 	     }
 	   }
-	  
 //	  public Etudiant recherche(String nom)
 //	   {
 //	     for(Etudiant e : this.etudiants)
@@ -143,30 +118,20 @@ public class Promotion {
 	     }     
 	     return null;
 	   }
-	  	  
 //	  public ArrayList<Etudiant> admis(){
-//		    
 //	    ArrayList<Etudiant> resultat = new ArrayList<>();
-//
 //	    for (Etudiant e: this.etudiants){
-//
 //	      if(e.moyenne() >= 10) resultat.add(e);
 //	    }
-//
 //	    return resultat;
 //	  }
 	 public ArrayList<Etudiant> admis(){
-		    
 	    ArrayList<Etudiant> resultat = new ArrayList<>();
-
 	    for (Etudiant e: this.etudiants.values()){
-
 	      if(e.moyenne() >= 10) resultat.add(e);
 	    }
-
 	    return resultat;
 	  }
-	  
 //	  public ArrayList<Etudiant> etuEtrangerNonFranco() {
 //	        ArrayList<Etudiant> listeN = new ArrayList<>();
 //	        for (Etudiant e : this.etudiants) {
@@ -186,51 +151,43 @@ public class Promotion {
             }
         }
         return listeN;
-    }
-
+      }
 	  // méthode en 2 itérations
 	  public ArrayList<Etudiant> majorsv1(){
-
-		    ArrayList<Etudiant> resultat = new ArrayList<>();
-		    double moyMax = 0;
- 
-		    for (Etudiant e: this.etudiants.values()){
-		    // moyMax est la meilleure moyenne rencontrée
-		    // jusqu'à l'étape courante
-	          double moyCourante = e.moyenne();
-		      if (moyMax < moyCourante){
-		        moyMax = moyCourante;
-		      }
-		    }
-		    
-		    // moyMax est la meilleure moyenne
-		    // on récupère les étudiants qui ont cette meilleure moyenne
-		    
-		    for (Etudiant e: this.etudiants.values()){
-		      if (moyMax == e.moyenne()){
-		        resultat.add(e);
-		      }
-		    }
-		    
-		    return resultat;
+	    ArrayList<Etudiant> resultat = new ArrayList<>();
+	    double moyMax = 0;
+	    for (Etudiant e: this.etudiants.values()){
+	    // moyMax est la meilleure moyenne rencontrée
+	    // jusqu'à l'étape courante
+          double moyCourante = e.moyenne();
+	      if (moyMax < moyCourante){
+	        moyMax = moyCourante;
+	      }
+	    }
+	    // moyMax est la meilleure moyenne
+	    // on récupère les étudiants qui ont cette meilleure moyenne
+	    for (Etudiant e: this.etudiants.values()){
+	      if (moyMax == e.moyenne()){
+	        resultat.add(e);
+	      }
+	    }
+	    return resultat;
 	  }
 
-		    // méthode en une itération
-	    public ArrayList<Etudiant> majors() {
-	        ArrayList<Etudiant> listeM = new ArrayList<>();
-	        double moyenneM = 0.0;
-
-	        for (Etudiant e : this.etudiants.values()) {
-	        	double moyCourante = e.moyenne();
-	            if (moyCourante > moyenneM) {
-	                listeM.clear();
-	                listeM.add(e);
-	                moyenneM = moyCourante;
-	            } else if (moyCourante == moyenneM) {
-	                listeM.add(e);
-	            }
-	        }
-	        return listeM;
-	    }
-
+	// méthode en une itération
+    public ArrayList<Etudiant> majors() {
+        ArrayList<Etudiant> listeM = new ArrayList<>();
+        double moyenneM = 0.0;
+        for (Etudiant e : this.etudiants.values()) {
+        	double moyCourante = e.moyenne();
+            if (moyCourante > moyenneM) {
+                listeM.clear();
+                listeM.add(e);
+                moyenneM = moyCourante;
+            } else if (moyCourante == moyenneM) {
+                listeM.add(e);
+            }
+        }
+        return listeM;
+    }
 }

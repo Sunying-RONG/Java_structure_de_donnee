@@ -26,6 +26,15 @@ public class Main {
 		FileAttente<Enfant> f1 = new FileAttente<>();
 		FileAttente<Adulte> f2 = new FileAttente<>();
 		FileAttente<Personne> f3 = new FileAttente<>();
+		
+		Personne p1 = new Personne("p1");
+		Adulte a1 = new Adulte("a1");
+		Enfant e1 = new Enfant("e1");
+		
+		f3.entre(e1);
+		f1.entre(e1);
+		
+		System.out.print(FileAttente.compareStaticMemeType(f1, f3));
 	}
 
 }

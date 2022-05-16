@@ -1,5 +1,4 @@
 package seance5_streamsIterateurs;
-
 import java.util.Iterator;
 
 public class IteratorDirectionLycee implements Iterator<EmployeLycee> {
@@ -38,5 +37,4 @@ public class IteratorDirectionLycee implements Iterator<EmployeLycee> {
 		cursur++;
 		return e;
 	}
-
 }
